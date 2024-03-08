@@ -1,5 +1,4 @@
 import { useState } from "react";
-
 import { useEffect } from "react";
 import { getRedirectResult, FacebookAuthProvider } from "firebase/auth";
 
@@ -33,14 +32,7 @@ const SignInForm = () => {
 
   useEffect(() => {
     const signInWithGoogle = async () => {
-      try {
-        const response = await getRedirectResult(auth);
-        if (response) {
-          const userDocRef = await createUserDocumentFormAuth(response.user);
-        }
-      } catch (error) {
-        console.error("Error obtaining redirect result", error);
-      }
+      await getRedirectResult(auth);
     };
 
     signInWithGoogle();
@@ -50,11 +42,11 @@ const SignInForm = () => {
     event.preventDefault();
 
     try {
-      const response = await signInAuthUserWithEmailAndPassword(
+      const { user } = await signInAuthUserWithEmailAndPassword(
         email,
         password
       );
-      console.log(response);
+
       resetFormFields();
     } catch (error) {
       if (error.code === "auth/invalid-credential") {
