@@ -1,15 +1,11 @@
 import { useState } from "react";
-import { useEffect } from "react";
-import { getRedirectResult, FacebookAuthProvider } from "firebase/auth";
 
 import FormInput from "../form-input/form-input.component";
 
 import Button, { BUTTON_TYPE_CLASSES } from "../button/button.component";
 
 import {
-  signInWithGoogleRedirect,
-  createUserDocumentFormAuth,
-  auth,
+  signInWithGooglePopup,
   signInAuthUserWithEmailAndPassword,
 } from "../../utils/firebase/firebase.utils";
 
@@ -20,8 +16,6 @@ const defaultFormFields = {
   password: "",
 };
 
-const provider = new FacebookAuthProvider();
-
 const SignInForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
@@ -30,29 +24,18 @@ const SignInForm = () => {
     setFormFields(defaultFormFields);
   };
 
-  useEffect(() => {
-    const signInWithGoogle = async () => {
-      await getRedirectResult(auth);
-    };
-
-    signInWithGoogle();
-  }, []);
+  const signInWithGoogle = async () => {
+    await signInWithGooglePopup();
+  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     try {
-      const { user } = await signInAuthUserWithEmailAndPassword(
-        email,
-        password
-      );
-
+      await signInAuthUserWithEmailAndPassword(email, password);
       resetFormFields();
     } catch (error) {
-      if (error.code === "auth/invalid-credential") {
-        alert("Incorrect email or password!");
-      }
-      console.log(error);
+      console.log("user sign in failed", error);
     }
   };
 
@@ -91,7 +74,7 @@ const SignInForm = () => {
           <Button
             buttonType={BUTTON_TYPE_CLASSES.google}
             type="button"
-            onClick={signInWithGoogleRedirect}
+            onClick={signInWithGoogle}
           >
             Sign In With Google
           </Button>

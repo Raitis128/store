@@ -1,7 +1,7 @@
 import { initializeApp } from "firebase/app";
 import {
   getAuth,
-  signInWithRedirect,
+  signInWithPopup,
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -38,10 +38,11 @@ googleProvider.setCustomParameters({
 });
 
 export const auth = getAuth();
-export const signInWithGoogleRedirect = () =>
-  signInWithRedirect(auth, googleProvider);
 
-export const db = getFirestore(firebaseApp);
+export const signInWithGooglePopup = () =>
+  signInWithPopup(auth, googleProvider);
+
+export const db = getFirestore();
 
 export const addCollectionAndDocuments = async (
   collectionKey,
