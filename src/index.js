@@ -9,6 +9,8 @@ import { store, persistor } from "./store/store";
 import { stripePromise } from "./utils/stripe/stripe.utils";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 
+import ScrollToTop from "./ScrollToTop";
+
 import App from "./App";
 
 import reportWebVitals from "./reportWebVitals";
@@ -20,6 +22,7 @@ root.render(
       <PersistGate loading={null} persistor={persistor}>
         <BrowserRouter>
           <Elements stripe={stripePromise}>
+            <ScrollToTop />
             <App />
           </Elements>
         </BrowserRouter>
