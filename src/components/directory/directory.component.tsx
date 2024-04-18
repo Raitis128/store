@@ -14,38 +14,37 @@ export type DirectoryCategory = {
 const categories: DirectoryCategory[] = [
   {
     id: 1,
-    title: "Hats",
+    title: "Mouses",
     imageUrl:
-      "https://cms.cloudinary.vpsvc.com/image/upload/c_scale,dpr_auto,f_auto,q_auto:best,t_productPageHeroGalleryTransformation_v2,w_auto/india%20lob/embroidered%20and%20printed%20caps/in_embroidered_printed-caps_002",
-    route: "shop/hats",
+      "https://i.rtings.com/assets/pages/Fr5czRHa/best-gaming-mouse-202106-medium.jpg?format=auto",
+    route: "shop/mouses",
   },
   {
     id: 2,
-    title: "Jackets",
+    title: "Keyboards",
     imageUrl:
-      "https://images.squarespace-cdn.com/content/v1/5f7ceb20fd62c35cd57c4988/1618873667754-K1OFS4FE8BDVS49VVZ7Q/IMG_4935.JPG",
-    route: "shop/jackets",
+      "https://static1.howtogeekimages.com/wordpress/wp-content/uploads/2022/04/rgb-lit-gaming-mechanical-keyboard.jpg",
+    route: "shop/keyboards",
   },
   {
     id: 3,
-    title: "Sneakers",
+    title: "Headphones",
     imageUrl:
-      "https://www.bpmcdn.com/f/files/kelowna/import/2022-05/29204424_web1_220526-KCN-hype-store_1.jpg",
-    route: "shop/sneakers",
+      "https://cdn.arstechnica.net/wp-content/uploads/2021/10/Razer-Kraken-V3-HyperSense.jpg",
+    route: "shop/headphones",
   },
   {
     id: 4,
-    title: "Womens",
-    imageUrl:
-      "https://www.thelist.com/img/gallery/the-best-clothing-stores-for-your-age/intro-1663675500.jpg",
-    route: "shop/womens",
+    title: "Microphones",
+    imageUrl: "https://cdn.mos.cms.futurecdn.net/pi53aw4gWPHFeYSJu9oaaU.jpg",
+    route: "shop/microphones",
   },
   {
     id: 5,
-    title: "Mens",
+    title: "Chairs",
     imageUrl:
-      "https://busynessprofile.com/wp-content/uploads/2021/05/F-3-Mens-Clothing-Store.jpg",
-    route: "shop/mens",
+      "https://www.cnet.com/a/img/resize/fd110784c273cc2c155686e438a8341d9d9515e2/hub/2019/07/19/f6bba4b3-a9c8-4780-9a5f-3083a87fb16f/49-gaming-chairs.jpg?auto=webp&fit=crop&height=675&width=1200",
+    route: "shop/chairs",
   },
 ];
 
