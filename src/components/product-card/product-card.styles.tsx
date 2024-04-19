@@ -35,6 +35,13 @@ export const ProductCartContainer = styled.div`
   }
   @media screen and (max-width: 800px) {
     width: 40vw;
+    height: 300px;
+    margin-bottom: 50px;
+
+    span {
+      margin-top: 30px;
+      font-size: 13px;
+    }
 
     button {
       display: block;
@@ -66,6 +73,10 @@ export const Footer = styled.div`
 export const Name = styled.span`
   width: 90%;
   margin-bottom: 15px;
+
+  @media screen and (max-width: 800px) {
+    margin-right: 10px;
+  }
 `;
 
 export const Price = styled.span`
