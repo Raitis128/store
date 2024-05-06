@@ -18,5 +18,6 @@ export const ButtonsContainer = styled.div`
   justify-content: space-between;
   @media screen and (max-width: 800px) {
     flex-direction: column;
+    gap: 15px;
   }
 `;

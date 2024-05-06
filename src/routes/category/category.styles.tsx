@@ -8,7 +8,7 @@ export const CategoryContainer = styled.div`
 
   @media screen and (max-width: 800px) {
     grid-template-columns: 1fr 1fr;
-    grid-column-gap: 50px;
+    grid-column-gap: 30px;
     grid-row-gap: 25px;
   }
 `;

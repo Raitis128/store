@@ -38,6 +38,10 @@ export const ProductCartContainer = styled.div`
     height: 300px;
     margin-bottom: 50px;
 
+    img {
+      height: 300px;
+    }
+
     span {
       margin-top: 30px;
       font-size: 13px;
@@ -79,6 +83,4 @@ export const Name = styled.span`
   }
 `;
 
-export const Price = styled.span`
-  width: 10%;
-`;
+export const Price = styled.span``;
