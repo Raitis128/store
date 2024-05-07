@@ -6,6 +6,8 @@ import { Routes, Route } from "react-router-dom";
 import Spinner from "./components/spinner/spinner.component";
 import { checkUserSession } from "./store/user/user.action";
 
+import Footer from "./components/footer/footer.component";
+
 import { GlobalStyle } from "./global.styles";
 
 const Navigation = lazy(() =>
@@ -36,6 +38,7 @@ const App = () => {
           <Route path="checkout" element={<Checkout />} />
         </Route>
       </Routes>
+      <Footer />
     </Suspense>
   );
 };

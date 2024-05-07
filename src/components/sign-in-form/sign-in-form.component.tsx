@@ -18,6 +18,7 @@ const defaultFormFields = {
 const SignInForm = () => {
   const dispatch = useDispatch();
   const [formFields, setFormFields] = useState(defaultFormFields);
+  const [errorMessage, setErrorMessage] = useState("");
   const { email, password } = formFields;
 
   const resetFormFields = () => {
@@ -36,12 +37,12 @@ const SignInForm = () => {
       resetFormFields();
     } catch (error) {
       console.log("user sign in failed", error);
+      setErrorMessage("Email or password is incorrect!");
     }
   };
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
-
     setFormFields({ ...formFields, [name]: value });
   };
 
@@ -67,6 +68,7 @@ const SignInForm = () => {
           name="password"
           value={password}
         />
+        {errorMessage && <span>{errorMessage}</span>}
         <ButtonsContainer>
           <Button type="submit">Sign In</Button>
           <Button
