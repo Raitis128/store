@@ -11,7 +11,6 @@ export const ProductCartContainer = styled.div`
   img {
     width: 100%;
     height: 500px;
-    object-fit: cover;
     margin-bottom: 5px;
   }
 
